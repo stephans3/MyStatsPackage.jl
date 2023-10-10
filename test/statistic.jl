@@ -17,18 +17,18 @@ end
 @testset "integration test" begin
     n11 = 1
     n12 = 10
-    n21 = n12 +1
+    n21 = n12 + 1
     n22 = 2n12
 
     data1 = collect(n11:n12)
     data2 = collect(n21:n22)
-    
-    gauss_sum1 = n12*(n12 + 1)/2
-    gauss_sum2 = n22*(n22 + 1)/2 - gauss_sum1
 
-    
+    gauss_sum1 = n12 * (n12 + 1) / 2
+    gauss_sum2 = n22 * (n22 + 1) / 2 - gauss_sum1
+
+
     # Expected result
-    expected_mean = (gauss_sum1 + gauss_sum2)/2
+    expected_mean = (gauss_sum1 + gauss_sum2) / 2
 
     sum1 = rse_sum(data1)
     sum2 = rse_sum(data2)
