@@ -1,0 +1,10 @@
+name = "MyStatsPackage"
+uuid = "eb1fab55-6f55-4fe0-8a1f-ca6473303014"
+authors = ["Stephan Scholz <stephan.scholz@rwu.de>"]
+version = "0.1.0"
+
+[deps]
+ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
+
+[compat]
+ProgressMeter = "1.8"
