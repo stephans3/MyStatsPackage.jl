@@ -9,7 +9,7 @@ include("statistic.jl")
 
 export printOwner
 function printOwner()
-    return "Stephan Scholz"
+    return "stephans3"
 end
 
 end # module MyStatsPackage
