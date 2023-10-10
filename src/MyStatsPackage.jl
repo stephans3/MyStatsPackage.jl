@@ -12,4 +12,9 @@ function printOwner()
     return "stephans3"
 end
 
+export example4pr
+function example4pr()
+    return "Example function for Pull Request"
+end
+
 end # module MyStatsPackage
