@@ -1,5 +1,7 @@
-function rse_sum(a)
+function rse_sum(a :: AbstractVector)
     # s = +(a...)
+    @assert all(!isnan, a)
+
     s=0
     for (i,e) in enumerate(a)
         s += e
@@ -8,22 +10,20 @@ function rse_sum(a)
     return s
 end
 
-function rse_mean(a)
+function rse_mean(a :: AbstractVector)
     return rse_sum(a) / length(a)
 end
 
 
 
-function rse_std(a)
+function rse_std(a :: AbstractVector)
     sqrt(rse_sum((a .- rse_mean(a)).^2) / (length(a)-1))
 end
 
 
-function rse_tstat(a;σ=rse_std(a)) 
+function rse_tstat(a :: AbstractVector;σ=rse_std(a)) 
     return rse_mean(a)/(σ/sqrt(length(a)))
 end
-
-rse_tstat(2:3,σ=2)
 
 struct StatResult
     x; 
@@ -32,7 +32,7 @@ struct StatResult
     tvalue;
 end
 
-function StatResult(a)
+function StatResult(a :: AbstractVector)
     std = rse_std(a)
     tvalue = rse_tstat(a)
 
